@@ -1,4 +1,30 @@
+api: '1.20'
 name: chayulaAI
 version: '1.0-SNAPSHOT'
 main: com.chayula.chayulaAI.ChayulaAI
-api-version: '1.21'
+api-version: '1.20'
+folia-supported: true
+authors: [chayula]
+description: Minecraft sunucunuz için yapay zeka asistanı
+website: https://github.com/yourusername/chayulaAI
+
+depend: [PlaceholderAPI]
+softdepend: []
+
+commands:
+  ai:
+    description: AI ile sohbet etmek için kullanılır
+    usage: /ai <mesaj>
+    permission: cai.use
+  cai:
+    description: chayulaAI plugin ayarlarını yönetir
+    usage: /cai <reload|status|test>
+    permission: cai.admin
+
+permissions:
+  cai.use:
+    description: AI ile sohbet etme izni
+    default: true
+  cai.admin:
+    description: ChayulaAI ayarlarını yönetme izni
+    default: op

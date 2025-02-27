@@ -2,20 +2,22 @@
 
 ChayulaAI is an advanced artificial intelligence assistant plugin for your Minecraft server. It provides intelligent and contextual responses to players using the OpenRouter API.
 
+Purchase link: https://builtbybit.com/resources/chayulaai-minecraft-ai-chat-plugin.61274/
+
 ## ❤️ Planned Features
 - Custom URL and API support
 - Discord link
 - Web chat for your store/forum/blog
 
-## 🌟 Özellikler
+## 🌟 Features
 
 - 💬 Advanced AI chat system
-- 🌍 Çoklu dil desteği
-- 💾 Konuşma geçmişi ve günlük kayıt sistemi
-- 🔒 Rate limiting ve güvenlik kontrolleri
-- 🎨 Minecraft renk kodları desteği
-- 📝 PlaceholderAPI entegrasyonu
-- ⚡ Folia, Paper and Spigot desteği
+- 🌍 Multi-language support
+- 💾 Speech history and diary recording system
+- 🔒 Rate limiting and security controls
+- 🎨 Minecraft colour codes support
+- 📝 PlaceholderAPI support
+- ⚡ Folia, Paper and Spigot support
 
 ## 🧠 Knowledge Base
 

@@ -1,52 +1,69 @@
-# AI Ayarları
+# AI Settings
 openrouter-api-key: "YOUR_OPENROUTER_API_KEY_HERE"
-ai-model: "mistralai/mistral-7b-instruct" # Kullanılacak model
+ai-model: "google/gemini-2.0-flash-thinking-exp:free"
+language: "en" # Plugin language (You can add custom language files in messages folder)
+output-language: "English" # AI response language
 debug-mode: false
 
-# Chat Ayarları
-ai-prefix: "&6[VGNW AI]&r"
-error-prefix: "&c[VGNW AI]&r"
+# Chat Settings
+ai-prefix: "&6[AI]&r"
+error-prefix: "&c[AI]&r"
 
-# Performans Ayarları
-cache-timeout: 300 # saniye
+# Performance Settings
+cache-timeout: 300 # seconds
 max-conversation-history: 5 
 
-# Knowledge Base Ayarları
+# Knowledge Base Settings
 system-prompts:
-  default: "Sen VGNW isimli bir Minecraft sunucusunda oyunculara yardımcı olan bir asistansın."
-  survival: "Sen VGNW'nin survival sunucusunda oyunculara yardımcı olan bir asistansın. Oyunculara hayatta kalma, kaynak toplama ve üretim konularında rehberlik edebilirsin."
-  skyblock: "Sen VGNW'nin skyblock sunucusunda oyunculara yardımcı olan bir asistansın. Ada geliştirme, otomatik farm sistemleri ve ekonomi konularında bilgi verebilirsin."
-  
+  default: |
+    - "Your name is Harper"
+    - "You are an assistant who helps players on a Minecraft server called Chayula"
+    - "You must always give your answers in %output_language%"
+    - "Make sure you use the placeholders properly"
+    - "Use minecraft colour codes(&1, &2, &3, &4, &5, &6, &7, &8, &9, &a, &b, &c, &d, &e, &f, &l, &m, &n, &o, &r) in conversation to improve user experience"
+    - "Your basic speech colour code should be &f, you should not use colour codes unless you need emphasis"
+    - "Do not give any information other than the server's own information, you must not be delusional"
+
+# Context Rules - AI's rules of behaviour
 context-rules:
-  - "Yanıtların kısa ve öz olmalı"
-  - "Minecraft mekaniklerine uygun öneriler ver"
-  - "Oyuncuları sunucu kurallarına uymaya teşvik et"
-  - "Oyun içi ekonomiyi dengede tutmaya yardımcı ol"
-  
+  - "Your answers should be short and concise"
+  - "Give suggestions based solely on Minecraft mechanics when necessary"
+  - "Encourage players to follow server rules when necessary"
+  - "Help stabilise the in-game economy"
+  - "Be friendly"
+
+# Knowledge Base - Server information that AI needs to know
 knowledge-base:
   commands:
-    - "/tpa - Başka bir oyuncuya ışınlanma isteği gönderir"
-    - "/sethome - Ev noktası belirler"
-    - "/market - Sunucu marketini açar"
+    - "/tpa - Sends a teleport request to another player"
+    - "/sethome - Home determines the point"
+    - "/ah - Opens players' auction and virtual marketplace"
+    - "/lands - Lands and nations plugin"
   rules:
-    - "Hile kullanmak yasaktır"
-    - "Diğer oyunculara saygılı olunmalıdır"
-    - "Reklam yapmak yasaktır"
+    - "It is forbidden to use cheats"
+    - "Respect for other players"
+    - "Advertising is prohibited"
   features:
-    - "Özel ada sistemleri"
-    - "Gelişmiş market ekonomisi"
-    - "Oyuncu dükkânları" 
+    - "Special skills system"
+    - "Advanced market economy"
 
-# Placeholder Ayarları
+# PlaceholderAPI Integration - Available placeholders
+# Note: You can use these placeholders in system-prompts
 placeholders:
   player:
-    - "%player_name% - Oyuncunun adı"
-    - "%player_displayname% - Oyuncunun görünen adı"
-    - "%player_world% - Oyuncunun bulunduğu dünya"
-    - "%player_ping% - Oyuncunun ping değeri"
-    - "%player_balance% - Oyuncunun parası"
-    - "%player_playtime% - Oyuncunun oynama süresi"
+    - "%player_displayname% - Player's display name"
+    - "%player_world% - The world in which the player is located"
+    - "%player_first_join_date% - Player's first participation date"
+    - "%vault_eco_balance_formatted% - Player's money"
   server:
-    - "%server_online% - Çevrimiçi oyuncu sayısı"
-    - "%server_tps% - Sunucu TPS değeri"
-    - "%server_time% - Sunucu saati" 
+    - "%bungee_total% - Number of online players" 
+
+# Chat History Settings
+chat-history:
+  max-messages: 10 # Maximum number of messages to remember per player (max: 20)
+  save-logs: true # Whether to save chat logs 
+
+# Rate Limit Settings
+rate-limit:
+  enabled: true
+  cooldown: 3000 # Milliseconds between requests (3 seconds) 
