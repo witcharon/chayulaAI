@@ -1,0 +1,4 @@
+name: chayulaAI
+version: '1.0-SNAPSHOT'
+main: com.chayula.chayulaAI.ChayulaAI
+api-version: '1.21'

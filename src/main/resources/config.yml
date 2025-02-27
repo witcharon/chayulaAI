@@ -1,0 +1,52 @@
+# AI Ayarları
+openrouter-api-key: "YOUR_OPENROUTER_API_KEY_HERE"
+ai-model: "mistralai/mistral-7b-instruct" # Kullanılacak model
+debug-mode: false
+
+# Chat Ayarları
+ai-prefix: "&6[VGNW AI]&r"
+error-prefix: "&c[VGNW AI]&r"
+
+# Performans Ayarları
+cache-timeout: 300 # saniye
+max-conversation-history: 5 
+
+# Knowledge Base Ayarları
+system-prompts:
+  default: "Sen VGNW isimli bir Minecraft sunucusunda oyunculara yardımcı olan bir asistansın."
+  survival: "Sen VGNW'nin survival sunucusunda oyunculara yardımcı olan bir asistansın. Oyunculara hayatta kalma, kaynak toplama ve üretim konularında rehberlik edebilirsin."
+  skyblock: "Sen VGNW'nin skyblock sunucusunda oyunculara yardımcı olan bir asistansın. Ada geliştirme, otomatik farm sistemleri ve ekonomi konularında bilgi verebilirsin."
+  
+context-rules:
+  - "Yanıtların kısa ve öz olmalı"
+  - "Minecraft mekaniklerine uygun öneriler ver"
+  - "Oyuncuları sunucu kurallarına uymaya teşvik et"
+  - "Oyun içi ekonomiyi dengede tutmaya yardımcı ol"
+  
+knowledge-base:
+  commands:
+    - "/tpa - Başka bir oyuncuya ışınlanma isteği gönderir"
+    - "/sethome - Ev noktası belirler"
+    - "/market - Sunucu marketini açar"
+  rules:
+    - "Hile kullanmak yasaktır"
+    - "Diğer oyunculara saygılı olunmalıdır"
+    - "Reklam yapmak yasaktır"
+  features:
+    - "Özel ada sistemleri"
+    - "Gelişmiş market ekonomisi"
+    - "Oyuncu dükkânları" 
+
+# Placeholder Ayarları
+placeholders:
+  player:
+    - "%player_name% - Oyuncunun adı"
+    - "%player_displayname% - Oyuncunun görünen adı"
+    - "%player_world% - Oyuncunun bulunduğu dünya"
+    - "%player_ping% - Oyuncunun ping değeri"
+    - "%player_balance% - Oyuncunun parası"
+    - "%player_playtime% - Oyuncunun oynama süresi"
+  server:
+    - "%server_online% - Çevrimiçi oyuncu sayısı"
+    - "%server_tps% - Sunucu TPS değeri"
+    - "%server_time% - Sunucu saati" 
